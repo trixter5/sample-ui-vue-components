@@ -1,0 +1,178 @@
+.button-counter
+    border-top 1px solid $button-group-border-top-default
+    border-bottom 1px solid $button-group-border-bottom-default
+    padding 0.7rem 1.2rem
+    background linear-gradient(top, $button-group-bg-top-default, $button-group-bg-bottom-default)
+    max-height 3.2rem
+
+    &__text
+        margin-right 0.8rem
+        color $button-group-text-color-default
+
+    &__counter
+        color $button-group-counter-color-default
+
+    &__counter
+    &__text
+        text-shadow $button-group-tsh-default
+        text(m-14-02-l)
+        line-height 1.6rem
+
+    &:hover
+        border-top 1px solid $button-group-border-top-hover
+        border-bottom 1px solid $button-group-border-bottom-hover
+        background linear-gradient(top, $button-group-bg-top-hover, $button-group-bg-bottom-hover);
+
+        &:after
+            background linear-gradient(top, $button-group-border-right-top-hover, $button-group-border-right-bottom-hover);
+
+    &:hover &__text
+        color $button-group-text-color-hover
+        text-shadow $button-group-tsh-hover
+
+    &:hover &__counter
+        color $button-group-counter-color-hover
+        text-shadow $button-group-tsh-hover
+
+
+    &:active
+    &--active
+        border-top 1px solid $button-group-border-top-active
+        border-bottom 1px solid $button-group-border-bottom-active
+        background linear-gradient(top, $button-group-bg-top-active, $button-group-bg-bottom-active) !important
+
+        &:after
+            background linear-gradient(top, $button-group-border-right-top-active, $button-group-border-right-bottom-active)
+
+    &:active &__text
+    &--active &__text
+        color $button-group-text-color-active !important
+
+    &:active &__counter
+    &--active &__counter
+        color $button-group-counter-color-active
+        text-shadow $button-group-tsh-active-hover !important
+
+    &:active &__text
+    &--active &__text
+    &:active &__icon
+    &--active &__icon
+        text-shadow $button-group-tsh-active
+        color $button-group-text-active
+
+    &:active &__counter
+    &--active &__counter
+        text-shadow $button-group-tsh-active
+        color $button-group-counter-color-active !important
+
+    &:active:hover
+    &--active:hover
+        border-top $button-subheader-border-top-active 1px solid
+        border-bottom $button-subheader-border-bottom-active 1px solid
+
+    &:active:hover &__text
+    &--active:hover &__text
+        text-shadow $button-subheader-tsh-active
+
+    &--header
+        background linear-gradient(top, $button-header-bg-top-default, $button-header-bg-bottom-default)
+        border-top 1px solid $button-header-border-top-default
+        border-bottom 1px solid $button-header-border-bottom-default
+
+        &:after
+            content ""
+            position absolute
+            z-index 1
+            right 0
+            top -1px
+            height calc(100% + 2px)
+            width 1px
+            background linear-gradient(top, $button-header-border-right-top-default, $button-header-border-right-bottom-default)
+
+    &--header &__text
+        color $button-header-text-default
+        text-shadow $button-header-tsh-default
+
+    &--header &__icon
+        color $button-header-icon-color-default
+        text-shadow $button-header-tsh-default
+
+    &--header:hover
+        background linear-gradient(top, $button-header-bg-top-hover, $button-header-bg-bottom-hover)
+        border-top 1px solid $button-header-border-top-hover
+        border-bottom 1px solid $button-header-border-bottom-hover
+
+    &--header:hover &__text
+        color $button-header-text-hover
+        text-shadow $button-header-tsh-hover
+
+    &--header:hover &__icon
+        color $button-header-icon-color-hover
+        text-shadow $button-header-tsh-hover
+
+    &--header:active
+    &--header&--active
+        background linear-gradient(top, $button-header-bg-top-active, $button-header-bg-bottom-active) !important
+        border-top 1px solid $button-header-border-top-active
+        border-bottom 1px solid $button-header-border-bottom-active
+        &:after
+            background rgba(0,0,0,0.2)
+
+    &--header:active &__text
+    &--header&--active &__text
+        color $button-header-text-active
+        text-shadow $button-header-tsh-active !important
+
+    &--header:active &__icon
+    &--header&--active &__icon
+        color $button-header-icon-color-active
+        text-shadow $button-header-tsh-active
+
+    &--header:hover:active
+    &--header&--active:hover
+        background linear-gradient(top, $button-header-bg-top-hover-active, $button-header-bg-bottom-hover-active) !important
+        border-top 1px solid $button-header-border-top-hover-active
+        border-bottom 1px solid $button-header-border-bottom-hover-active
+        &:after
+            background transparent
+
+    &--header:hover:active &__text
+    &--header&--active:hover &__text
+        color $button-header-text-hover-active
+        text-shadow $button-header-tsh-hover-active
+
+    &--header:hover:active &__icon
+    &--header&--active:hover &__icon
+        color $button-header-icon-color-hover-active
+        text-shadow $button-header-tsh-hover-active
+
+
+    &--group
+        position relative
+        border-radius 0 !important
+        border-right 1px solid $button-group-border-right-default
+
+
+    &:not(:only-child):first-child
+        border-top-left-radius $border-radius-base !important
+        border-bottom-left-radius $border-radius-base !important
+
+    &:not(:only-child):last-child
+        border-top-right-radius $border-radius-base !important
+        border-bottom-right-radius $border-radius-base !important
+        border-right 0 !important
+
+    &:active&--group
+    &--active&--group
+        border-right 1px solid $button-group-border-right-active
+
+
+    &--group&--flat
+        border-right 1px solid $button-group-flat-border-right-default
+
+    &--group&--flat:hover
+        border-right 1px solid $button-group-flat-border-right-hover
+
+    &--group&--flat:active
+    &--group&--flat&--active
+        border-right 1px solid $button-group-flat-border-right-active

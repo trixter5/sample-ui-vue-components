@@ -1,0 +1,144 @@
+.input-number
+	box-sizing border-box
+
+	&__control
+	&__wrapper
+	&__placeholder
+		box-sizing border-box
+
+	&__control
+		size(100%)
+		border $input-border-default 1px solid
+		padding $input-padding-y $input-padding-x
+		margin 0
+		background $input-bg-default
+		border-radius $input-border-radius
+		padding-top ($input-text-height / 2)
+		box-shadow $input-bsh
+		text(m-16-02-l)
+		color $input-text
+		appearance none
+		-moz-appearance textfield
+
+		&::-webkit-inner-spin-bottom
+		&::-webkit-outer-spin-bottom
+			-webkit-appearance none
+			margin 0
+
+		&:focus
+			outline none
+			border $input-border-focus 1px solid
+			box-shadow 0 0 0 $input-outline-width-focus $input-outline-focus
+
+		&--invalid
+			border 1px solid $input-error-color
+
+		&:focus&--invalid
+			border 1px solid $input-error-color
+			box-shadow 0 0 0 $input-outline-width-focus $input-error-outline-color
+
+		&:disabled
+			color $black-450
+			cursor not-allowed
+
+		&:disabled + .input-number__controls
+			box-shadow none
+
+	&__wrapper
+		position relative
+		display block
+		size($input-text-width, $input-text-height)
+		border-radius $input-border-radius
+
+	&__label
+		display block
+		margin-bottom 1.6rem
+		text-variant(light, 2rem, -0.4px, left)
+		line-height 2rem
+	//TODO: label style to change
+
+	&__icon
+		absolute(right 0.8rem top 1.2rem)
+
+	&__placeholder
+		absolute(top 0 left 0)
+		size(100%, 50%)
+		padding $input-padding-y $input-padding-x
+		text(r-14-02-l)
+		color $input-placeholder-default
+
+	&__controls
+		absolute(right 1.2rem top 50%)
+		transform translateY(-50%)
+
+	&__controls .button-icon
+		height 1.6rem
+		display flex
+		flex-direction column
+		justify-content center
+		padding-top 0 !important
+		padding-bottom 0 !important
+		//padding-top 0 !important
+		&:disabled
+			min-width 0
+		.button-icon__icon
+		.button-icon__icon svg
+			size(2.4rem, 1.6rem)
+
+		&:last-child
+			border-top-right-radius 0 !important
+		&:first-child
+			border-bottom-left-radius 0 !important
+
+	&:hover &__control
+		background $input-bg-hover
+
+	&:hover &__placeholder
+		color $input-placeholder-hover
+
+	::placeholder
+		color $black-800
+
+	&--small
+		height 3.2rem
+		max-width 14rem
+
+	&--small &__control
+		padding 0.6rem 1.2rem
+
+	&--small .input-number__control--tel
+		padding-left 7.2rem
+		padding-right 4.4rem
+
+	&--small .input-number__wrapper
+		width auto
+		height 100%
+		display flex
+		align-items stretch
+
+	&--small .input-number__icon
+		position static
+
+
+	&--small .input-number__icon
+		margin-left -3.2rem
+		relative(top 0.1rem right 0)
+		.button-icon
+			height 3rem
+			border-top-left-radius 0
+			border-bottom-left-radius 0
+
+	&--small .input-number__controls
+		right 0
+		.button-icon
+			border-top-left-radius 0 !important
+			border-bottom-left-radius 0 !important
+
+	&--small .buttons-group--vertical
+		border-top-left-radius 0 !important
+		border-bottom-left-radius 0 !important
+
+	.buttons-group--vertical
+		box-shadow $buttons-bsh
+
+

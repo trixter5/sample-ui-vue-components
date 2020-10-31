@@ -1,0 +1,14 @@
+li.dropdown-list__item.list-item(:draggable="draggable" :class="mod" @click="clickListItem")
+    <slot name="before"></slot>
+    span(v-if="iconName.length > 0 && !draggable" class="list-item__icon")
+        <SvgIcon :name="iconName"></SvgIcon>
+
+    span(v-else-if="draggable" class="list-item__icon")
+            <SvgIcon name="Drag"></SvgIcon>
+
+    span.list-item__text(v-if="text")
+        | {{ text }}
+    .list-item__content(v-if="this.$slots.default")
+        <slot></slot>
+    .list-item__after
+        <slot name="after"></slot>

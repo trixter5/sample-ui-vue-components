@@ -1,0 +1,8 @@
+button(@click="$emit('click')" @mouseover="$emit('mouseover')" @mouseout="$emit('mouseout')" type="button" :class="[className, mod]" class="button" :disabled="disable")
+    span(class="button__text" :class="classNameText")
+        | <slot></slot>
+    .button__loader(v-if="process")
+        span
+        span
+        span
+    block buttonContent

@@ -1,0 +1,18 @@
+.dropdown-select(@click="isOpen = !isOpen" :style="styleWidth")
+    <Button-label :iconName="iconName" :class="{'button-label--active': isOpen}" :modifier="'group ' + mod">
+        <template v-if="avatar" v-slot:before>
+            <Avatar :src="'broker-sample.png'" size="2"></Avatar>
+        </template>
+        | {{ selected }}
+    </Button-label>
+    .dropdown-select__content(v-if="isOpen")
+        <Dropdown-menu isOpen>
+            <Vue-perfect-scrollbar class="dropdown-select__scroll">
+                <list-item @clickListItem="select(item)" v-for="(item, index) in list" :key="item.index">
+                    <template v-slot:before>
+                        <Avatar v-if="avatar" :src="'broker-sample.png'" size="2"></Avatar>
+                    </template>
+                    | {{ item.text }}
+                </list-item>
+            </Vue-perfect-scrollbar>
+        </Dropdown-menu>

@@ -1,0 +1,135 @@
+.list-item
+	display flex
+	justify-content flex-start
+	align-items center
+	border-top $list-item-border 1px solid
+	padding 0.8rem 1.2rem
+	background $list-item-bg-default
+	cursor pointer
+	line-height 1.7rem
+
+
+	&__text
+		text(m-14-02-l)
+		color $list-item-text-color-default
+
+	&__icon
+		color $list-item-icon-color-default
+		size(2.4rem)
+		svg
+			size(2.4rem)
+
+	&__icon + &__text
+		margin-left 0.8rem
+
+	&__content
+		display flex
+		justify-content space-between
+		align-items center
+		flex 0 0 100%
+
+	&__after
+		margin-left auto
+
+		svg
+			color $black-450
+
+	&:hover
+		background $list-item-bg-hover
+
+	&:hover &__text
+		color $list-item-text-color-hover
+
+	&:hover &__icon
+		color $list-item-icon-color-hover
+
+	&--active
+		background $list-item-bg-activated
+		border-top $list-item-draggable-border-top-active 1px solid
+
+	&--active &__text
+		color $list-item-text-color-active
+
+	&--active &__icon
+		color $list-item-icon-color-active
+
+	&--active[draggable="true"] &__icon
+		color $list-item-icon-color-default
+
+	&--active[draggable="true"]:hover &__icon
+		color $list-item-icon-color-hover
+
+	&:active
+		background $list-item-bg-active
+
+	&-radio
+		display block
+		&__wrapper
+			display flex
+
+	&--radio
+		padding-left 0.8rem
+		.radio-button
+			align-self start
+
+	&__checkboxes
+		flex 1 0 100%
+		.list-item-checkbox
+			&:first-child
+				background $list-item-bg-default !important
+
+				&:hover
+					background $list-item-bg-hover !important
+
+				&:active
+				&.list-item--active
+					background $list-item-bg-active !important
+
+	&--group
+		border-top 1px solid $list-item-group-border
+
+		.list-item-radio__wrapper
+			padding 0 1.2rem
+
+	&--checkbox
+		padding-left 3.6rem
+
+	&--checkbox&--active
+		.checkbox__icon
+			color $checkbox-icon-active
+
+	&--checkbox[draggable=true]
+		padding-left 0.8rem
+
+		.list-item__icon
+			margin-right 0.4rem
+
+	&--secondary
+		background $list-item-secondary-bg-default
+
+	&--secondary:hover
+		background $list-item-secondary-bg-hover
+
+	&--secondary:active
+		background $list-item-secondary-bg-active
+
+	&--secondary&--active
+		background $list-item-secondary-bg-active-on
+
+	&--secondary&--active:hover
+		background $list-item-secondary-bg-active-hover-on
+
+	&--inactive
+		.checkbox
+			&__icon
+				color $checkbox-icon-default !important
+
+			&:hover .checkbox__icon
+				color $checkbox-icon-hover !important
+
+.dx-sortable-dragging.dx-sortable-clone
+	box-shadow $list-item-draggable-bsh-active
+	opacity 1 !important
+	.list-item
+		background $list-item-draggable-bg-active
+		border-top $list-item-draggable-border-top-active

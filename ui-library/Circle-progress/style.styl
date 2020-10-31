@@ -1,0 +1,35 @@
+.circle-progress
+	relative()
+	&__bg
+		fill none
+		stroke $red-300
+		stroke-width 0.2rem
+
+	&__progress
+		fill none
+		stroke $green-500
+		stroke-width 0.2rem
+		//stroke-dasharray: 0 201;
+		stroke-dashoffset 0
+		animation circle-chart-fill 2s reverse
+		transition all 2s ease
+		transform rotate(-90deg)
+		transform-origin center
+
+	&__text
+		center()
+		text(sb-10-0-c)
+		color $green-600
+
+	&--table &__text
+		text(b-11-05-c)
+
+
+@keyframes circle-chart-fill
+	to
+		stroke-dashoffset 100
+
+@keyframes circle-chart-appear
+	to
+		opacity 1
+		transform translateY(0)

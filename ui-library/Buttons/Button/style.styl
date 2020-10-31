@@ -1,0 +1,229 @@
+button
+    border none
+    cursor pointer
+
+.using-mouse .button:focus:before
+    content none
+
+.button
+    position relative
+    display flex
+    align-items center
+    flex-flow row nowrap
+    border-radius $border-radius-base
+    line-height 1 !important
+    box-shadow $button-primary-bsh-default
+
+    a
+        text-decoration none
+        color inherit
+
+    &__text
+        text(m-14-02-c)
+
+    //&:after
+    //    content ""
+    //    absolute(left 0 top 0)
+    //    width 100%
+    //    height 100%
+    //    display block
+    //    box-sizing content-box
+    //    border-radius $border-radius-base
+    //
+    //    z-index 1
+
+    //&:hover:after
+    //    box-shadow $button-primary-bsh-hover
+
+    &:focus
+        outline none
+        &:before
+            content ""
+            absolute(left -5px top -5px)
+            size(100%)
+            display block
+            box-sizing content-box
+            border 5px solid $blue-250
+            border-radius 8px
+            z-index 1
+
+    &:active
+        &:focus
+            &:before
+                content none
+
+    // buttons FLAT AREA
+
+    &-primary
+        background-color $button-primary-bg-default
+        border-bottom $button-primary-border-default 1px solid
+        border-top transparent 1px solid
+
+        &__text
+            display: block;
+            flex 1 0 auto
+            text-shadow $button-primary-tsh
+            color $button-primary-text-default
+
+        &:hover
+            background-color $button-primary-bg-hover
+            border-bottom $button-primary-border-hover 1px solid
+
+        &:hover &__text
+                color $button-primary-text-default
+
+        &:active
+            background-color $button-primary-bg-active
+            border-top $button-primary-border-active 1px solid
+            border-bottom $button-primary-bg-active 1px solid
+
+        &:disabled
+            background-color $button-primary-bg-disabled
+            border-bottom $button-primary-border-disabled 1px solid
+            border-top $button-primary-border-disabled 1px solid
+            box-shadow none
+
+        &:disabled &__text
+            color $button-primary-text-disabled
+            text-shadow none
+
+    &-secondary
+        border-top $button-secondary-border-default 1px solid
+        border-bottom $button-secondary-border-default 1px solid
+        background $button-secondary-bg-default
+
+        &__text
+            display: block;
+            flex 1 0 auto
+            text-shadow $button-secondary-tsh
+            color $button-secondary-text-default
+
+        &:hover
+            border-top $button-secondary-border-hover 1px solid
+            background $button-secondary-bg-hover
+
+        &:hover &__text
+            color $button-secondary-text-hover
+            text-shadow $button-secondary-tsh
+
+        &:active
+        &--active
+            border-top $button-secondary-border-active 1px solid
+            background $button-secondary-bg-active
+
+        &:active &__text
+        &--active &__text
+            color $button-secondary-text-active
+            text-shadow $button-secondary-tsh
+
+        &:disabled
+            background $button-secondary-bg-disabled
+            border-top $button-secondary-border-disabled 1px solid
+            box-shadow none
+
+        &:disabled &__text
+            color $button-secondary-text-disabled
+
+        &--group
+            border-radius 0 !important
+            border-right 1px solid $button-action-color-border-default
+
+
+    &-cancel
+        border-top $button-cancel-border-default 1px solid
+        border-bottom $button-cancel-border-default 1px solid
+        background-color $button-cancel-bg-default
+
+        &__text
+            display: block;
+            flex 1 0 auto
+            text-shadow $button-cancel-tsh
+            color $button-cancel-text-default
+
+        &:hover
+            border-top $button-cancel-border-hover 1px solid
+            background-color $button-cancel-bg-hover
+
+        &:hover &__text
+            color $button-cancel-text-hover
+            text-shadow $button-cancel-tsh
+
+        &:active
+            border-top $button-cancel-border-active 1px solid
+            background-color $button-cancel-bg-active
+            box-shadow none
+
+        &:active &__text
+            color $button-cancel-text-active
+            text-shadow $button-cancel-tsh
+
+        &:disabled
+            background-color $button-cancel-bg-disabled
+            border-top $button-cancel-border-disabled 1px solid
+            box-shadow none
+
+        &:disabled &__text
+            color $button-cancel-text-disabled
+
+    &-primary
+    &-secondary
+    &-cancel
+    &:disabled
+        min-width 117px
+        padding $button-primary-padding
+
+    &:disabled
+        cursor default
+
+    &-primary
+    &-secondary
+        &--big
+            width 100% !important
+            padding-top 1.6rem !important
+            padding-bottom 1.6rem !important
+
+    &-primary
+        &--red
+            background $button-primary-red-default
+            border-bottom 1px solid $button-primary-red-border-default
+
+            &:hover
+                background $button-primary-red-hover
+                border-bottom 1px solid $button-primary-red-border-default
+
+            &:active
+            &--active
+                background $button-primary-red-active
+                border-top 1px solid $button-primary-red-border-active
+                border-bottom 1px solid transparent
+                
+        &--green
+            background $button-primary-green-default
+            border-bottom 1px solid $button-primary-green-border-default
+
+            &:hover
+                background $button-primary-green-hover
+                border-bottom 1px solid $button-primary-green-border-default
+
+            &:active
+            &--active
+                background $button-primary-green-active
+                border-top 1px solid $button-primary-green-border-active
+                border-bottom 1px solid transparent
+                
+        &--blue
+            background $button-primary-blue-default
+            border-bottom 1px solid $button-primary-blue-border-default
+
+            &:hover
+                background $button-primary-blue-hover
+                border-bottom 1px solid $button-primary-blue-border-default
+
+            &:active
+            &--active
+                background $button-primary-blue-active
+                border-top 1px solid $button-primary-blue-border-active
+                border-bottom 1px solid transparent
+
+    &__loader
+        loader()

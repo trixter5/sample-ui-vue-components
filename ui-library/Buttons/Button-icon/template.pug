@@ -1,0 +1,3 @@
+button(type="button" :class="[{'button-icon--active ': isActive}, mod]" :disabled="disable" @click="toggle" @mouseover="onMouseOver" class="button button-icon")
+    span(class="button__icon button-icon__icon" :style=" { 'color': color } ")
+        <SvgIcon :name="iconName"></SvgIcon>

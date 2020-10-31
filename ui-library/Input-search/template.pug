@@ -1,0 +1,9 @@
+.input-search
+    input.input-search__control(
+        type="text"
+        v-bind="$attrs"
+        :value="model"
+        :placeholder="placeholder"
+        @input="$emit('input', $event.target.value)")
+    span.input-search__icon
+        <svgIcon name="Search-mini"></svgIcon>

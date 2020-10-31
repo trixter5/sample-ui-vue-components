@@ -1,0 +1,175 @@
+content-color-name(color)
+    content color !important
+
+content-var-name(color)
+    content color !important
+
+
+.colors
+    display flex
+    flex-flow row wrap
+
+.color
+    position relative
+    background-color: grey
+    width 10rem
+    height 10rem
+    margin 1rem 1rem 4rem
+    &:before
+        content 'Цвет'
+        position: absolute;
+        top: -20px
+        text(r-12-02-l)
+        color $black-850
+
+    &:after
+        content ' ' +$blue-200
+        position: absolute;
+        bottom: -20px
+        text(r-12-02-l)
+        color $black-850
+
+
+.blue-800
+    background-color $blue-800
+    &:before
+        content-color-name('blue-800')
+
+    &:after
+        content-var-name(' ' + $blue-800)
+
+.blue-700
+    background-color $blue-700
+    &:before
+        content-color-name('blue-700')
+
+    &:after
+        content-var-name(' ' + $blue-700)
+
+.blue-600
+    background-color $blue-600
+    &:before
+        content-color-name('blue-600')
+
+    &:after
+        content-var-name(' ' + $blue-600)
+
+.blue-500
+    background-color $blue-500
+    &:before
+        content-color-name('blue-500')
+
+    &:after
+        content-var-name(' ' + $blue-500)
+
+.blue-400
+    background-color $blue-400
+    &:before
+        content-color-name('blue-400')
+
+    &:after
+        content-var-name(' ' + $blue-400)
+
+.blue-200
+    background-color $blue-200
+    &:before
+        content-color-name('blue-200')
+
+    &:after
+        content-var-name(' ' + $blue-200)
+
+.black-850
+    background-color $black-850
+    &:before
+        content-color-name('black-850')
+
+    &:after
+        content-var-name(' ' + $black-850)
+
+.black-800
+    background-color $black-800
+    &:before
+        content-color-name('black-800')
+
+    &:after
+        content-var-name(' ' + $black-800)
+
+.black-700
+    background-color $black-700
+    &:before
+        content-color-name('black-700')
+
+    &:after
+        content-var-name(' ' + $black-700)
+
+.black-450
+    background-color $black-450
+    &:before
+        content-color-name('black-450')
+
+    &:after
+        content-var-name(' ' + $black-450)
+
+.black-400
+    background-color $black-400
+    &:before
+        content-color-name('black-400')
+
+    &:after
+        content-var-name(' ' + $black-400)
+
+.black-350
+    background-color $black-350
+    &:before
+        content-color-name('black-350')
+
+    &:after
+        content-var-name(' ' + $black-350)
+
+.black-200
+    background-color $black-200
+    &:before
+        content-color-name('black-200')
+
+    &:after
+        content-var-name(' ' + $black-200)
+
+.black-150
+    background-color $black-150
+    &:before
+        content-color-name('black-150')
+
+    &:after
+        content-var-name(' ' + $black-150)
+
+.black-100
+    background-color $black-100
+    &:before
+        content-color-name('black-100')
+
+    &:after
+        content-var-name(' ' + $black-100)
+
+.black-50
+    background-color $black-50
+    &:before
+        content-color-name('black-50')
+
+    &:after
+        content-var-name(' ' + $black-50)
+
+.green-901
+    background-color $green-901
+    &:before
+        content-color-name('green-901')
+
+    &:after
+        content-var-name(' ' + $green-901)
+
+.red-600
+    background-color $red-600
+    &:before
+        content-color-name('red-600')
+
+    &:after
+        content-var-name(' ' + $red-600)

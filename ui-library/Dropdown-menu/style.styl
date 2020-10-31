@@ -1,0 +1,100 @@
+.dropdown-menu
+	width 20rem
+	border-radius $border-radius-base
+	box-shadow $dropdown-menu-bsh
+	overflow hidden
+	background $dropdown-menu-bg
+
+	&--account
+		.dropdown-list
+			> li:first-of-type > .list-item__content > .list-item
+				background linear-gradient(bottom, $white, $black-80)
+				border-top $white 1px solid
+
+				&:hover
+					background $list-item-bg-hover !important
+
+
+	&--profile
+		.dropdown-list
+			> .list-item-menu:first-of-type
+				background linear-gradient(bottom, $white, $black-80) !important
+				border-top $white 1px solid
+				&:hover
+					background $list-item-menu-bg-hover !important
+					border-top $list-item-menu-bg-hover 1px solid
+
+	&--prefixList
+		absolute(left 0 top 6.2rem)
+		z-index 1
+		.list-item
+			display flex
+			justify-content space-between
+			padding 0.8rem
+			line-height 2.3rem
+
+			&__text
+				margin-right 0.4rem
+
+	&__first
+		background linear-gradient(top, $dropdown-menu-first-bg-top, $dropdown-menu-first-bg-bottom)
+
+	&__header
+		padding 0.8rem
+		border-bottom 1px solid $dropdown-menu-header-border-bottom
+
+		.button-label__text
+			text-transform none
+
+		&--asModal
+			padding 0.8rem
+			display flex
+			justify-content space-between
+
+			.tooltip
+				color $black-350
+
+	&__title
+		text(sb-14-02-l)
+		line-height 1.6rem
+
+	&__footer
+		absolute(left 0 bottom 0)
+		width 100%
+		border-top:1px solid $flat-border
+		padding 0.8rem
+
+		.button
+			width 100%
+			border-radius $border-radius-base !important
+
+	&__body
+		padding 0.8rem
+
+		.dropdown-select
+			box-shadow $buttons-bsh
+			border-radius $border-radius-base
+			.button-label
+				border-radius $border-radius-base
+
+
+
+.dropdown-list
+	position relative
+
+.dropdown-menu
+	&__group
+		border-top 1px solid $list-item-group-border
+
+		&-scrollable
+			overflow hidden
+			height 20rem
+			border-top 0
+			box-shadow 0 -1px 0 0 $list-item-group-border, 0 1px 0 0 $list-item-group-border
+
+		&--last
+			padding-bottom: 8.2rem
+			box-sizing content-box
+
+		&--scrollable + .dropdown-menu__group
+			border-top 0

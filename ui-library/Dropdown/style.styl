@@ -1,0 +1,21 @@
+.dropdown
+	position relative
+
+	&__trigger
+		height auto
+
+		.button
+			width 100%
+			justify-content center
+			text-align center
+
+	&__content
+		absolute(top 0 left 0)
+		
+	&__content .dropdown-list
+		.list-item
+			&:first-of-type
+				background linear-gradient(bottom, $white, $black-100)
+
+				&:hover
+					background $list-item-bg-hover !important

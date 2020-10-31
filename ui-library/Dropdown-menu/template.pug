@@ -1,0 +1,6 @@
+.dropdown-menu(v-if="this.isOpen" :class="{'dropdown-menu--open': this.isOpen}" :style="styleWidth")
+    <slot name="header"></slot>
+    <slot name="body"></slot>
+    ul.dropdown-list
+        <slot></slot>
+    <slot name="footer"></slot>

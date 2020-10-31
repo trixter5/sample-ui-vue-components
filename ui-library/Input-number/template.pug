@@ -1,0 +1,24 @@
+.input-number(:class="{'input-number--small' : small}")
+    label.input-number__label(v-if="label && !small")
+        | {{ label }}
+    span.input-number__wrapper
+        span.input-number__placeholder(v-if="!small")
+            | {{ placeholder }}
+        input.input-number__control(
+            v-model.number="currentValue"
+            :disabled="disabled"
+            :min="min"
+            :max="max"
+            :step="step"
+            v-bind="$attrs"
+            :placeholder="placeholderValue"
+            type="number"
+            @blur="currentValue = value"
+            @keydown.esc="currentValue = value"
+            @keydown.enter="currentValue = value"
+            @keydown.up.prevent="increment"
+            @keydown.down.prevent="decrement"
+            )
+        span.input-number__controls.buttons-group.buttons-group--vertical
+            <Button-icon @toggle="increment" iconName="Arrow-dropdown-top-input" modifier="flat group" :disabled="incrementDisabled"></Button-icon>
+            <Button-icon @toggle="decrement" iconName="Arrow-dropdown-bottom-input" modifier="flat group" :disabled="decrementDisabled"></Button-icon>

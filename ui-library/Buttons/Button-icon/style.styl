@@ -1,0 +1,398 @@
+@import "../Button/style.styl"
+
+.button-icon
+	min-width 2.4rem
+	padding 0.3rem 0 !important
+	background linear-gradient(top, $button-header-bg-top-default, $button-header-bg-bottom-default)
+	border-top $button-header-border-top-default 1px solid
+	border-bottom $button-header-border-bottom-default 1px solid
+
+	&__icon
+		color $button-header-icon-color-default
+		filter drop-shadow($button-header-tsh-default)
+		size(2.4rem)
+
+		.svg-icon
+			size(2.4rem)
+
+	&:hover
+		background linear-gradient(top, $button-header-bg-top-hover, $button-header-bg-bottom-hover);
+		border-top $button-header-border-top-hover 1px solid
+		border-bottom $button-header-border-bottom-hover 1px solid
+
+	&:hover  &__icon
+		color $button-header-icon-color-hover
+		filter drop-shadow($button-header-tsh-hover)
+
+	&:active
+		background linear-gradient(top, $button-header-bg-top-active, $button-header-bg-bottom-active)
+		border-top $button-header-border-top-active 1px solid
+		border-bottom $button-header-border-bottom-active 1px solid
+
+	&--active
+		background linear-gradient(top, $button-header-bg-top-default, $button-header-bg-bottom-default)
+
+	&:active &__icon
+		color $button-header-icon-color-active
+		filter drop-shadow($button-header-tsh-active)
+
+	&--active &__icon
+		color $button-header-icon-color-on
+		filter drop-shadow($button-header-tsh-hover)
+
+	//&:active:hover
+	//	background linear-gradient(top, $button-header-bg-top-hover-active, $button-header-bg-bottom-hover-active);
+	//	border-top $button-header-border-top-hover-active 1px solid
+	//
+	//&--active:hover
+	//	background linear-gradient(top, $button-header-bg-top-default, $button-header-bg-bottom-default);
+	//	border-top $button-header-border-top-default 1px solid
+		//box-shadow 0 2px 8px rgba(0, 0, 0, 0.2), 0px 0px 2px rgba(0, 0, 0, 0.35)
+
+	&:active:hover &__icon
+		color $button-header-icon-color-hover-active
+		filter drop-shadow($button-header-tsh-hover-active)
+
+	&--active:hover &__icon
+		color $button-header-icon-color-hover
+		filter drop-shadow($button-header-tsh-hover)
+
+	&--square
+		padding 0.25rem 0.4rem !important
+		max-height 32px
+
+	&--min
+		padding 0 !important
+		max-height 2.4rem
+		width 2.4rem !important
+
+	&--subheader
+		border-top 1px solid $button-group-border-top-default
+		border-bottom 1px solid $button-group-border-bottom-default
+		background linear-gradient(top, $button-group-bg-top-default, $button-group-bg-bottom-default);
+		box-shadow none !important
+
+		&__text
+			margin-right 0.8rem
+			color $button-group-text-color-default
+
+		&__text
+			text-shadow $button-group-tsh-default
+
+		&:hover
+			border-top 1px solid $button-group-border-top-hover
+			border-bottom 1px solid $button-group-border-bottom-hover
+			background linear-gradient(top, $button-group-bg-top-hover, $button-group-bg-bottom-hover);
+
+			&:after
+				background linear-gradient(top, $button-group-border-right-top-hover, $button-group-border-right-bottom-hover);
+
+		&:hover &__text
+			color $button-group-text-color-hover
+			text-shadow $button-group-tsh-hover
+
+		&:active
+		&.button-icon--active
+			border-top 1px solid $button-group-border-top-active
+			border-bottom 1px solid $button-group-border-bottom-active
+			background linear-gradient(top, $button-group-bg-top-active, $button-group-bg-bottom-active) !important
+
+			&:after
+				background linear-gradient(top, $button-group-border-right-top-active, $button-group-border-right-bottom-active)
+
+		&.button-icon:active .button-icon__icon
+		&.button-icon--active .button-icon__icon
+			color $button-subheader-icon-color-active
+
+		&:active &__text
+		&.button-icon--active &__text
+			color $button-group-text-color-active !important
+
+		&:active:hover
+		&.button-icon--active:hover
+			border-top 1px solid $button-group-border-top-active
+			border-bottom 1px solid $button-group-border-bottom-active
+			background linear-gradient(top, $button-group-bg-top-active, $button-group-bg-bottom-active) !important
+
+		&:active:hover &__text
+		&.button-icon--active:hover &__text
+		&:active:hover &__icon
+		&.button-icon--active:hover &__icon
+			color $button-group-text-color-active
+
+
+		&:active &__text
+		&.button-icon--active &__text
+		&:active &__icon
+		&.button-icon--active &__icon
+			text-shadow $button-group-tsh-active
+			filter drop-shadow($button-group-tsh-active)
+			color $button-group-text-active
+
+		&:active &__counter
+		&.button-icon--active &__counter
+			text-shadow $button-group-tsh-active
+			color $button-group-counter-color-active !important
+
+		&:active:hover &__counter
+		&.button-icon--active:hover &__counter
+			text-shadow $button-group-tsh-active-hover
+			color $button-group-counter-color-active-hover
+
+		&:active:hover &__text
+		&.button-icon--active:hover &__text
+		&:active:hover &__icon
+		&.button-icon--active:hover &__icon
+			text-shadow $button-group-tsh-active-hover
+			filter drop-shadow($button-group-tsh-active-hover)
+			color $button-group-text-color-active-hover
+
+	&--secondary
+	&--flat
+		min-width 0
+		background $button-secondary-bg-default
+		border-bottom $button-secondary-border-default
+		border-top $button-secondary-border-default
+
+	&--secondary:active
+	&--secondary&--active
+	&--flat:active
+	&--secondary:active:hover
+	&--secondary&--active:hover
+	&--flat:active:hover
+		background $button-flat-bg-active
+		border-top $button-flat-border-top-active 1px solid
+		border-bottom $button-flat-border-bottom-active 1px solid
+
+		.button-icon__icon
+			color $button-flat-icon-active
+			filter drop-shadow($button-subheader-tsh-active)
+
+	&--secondary:hover
+	&--flat:hover
+		background $button-secondary-bg-hover
+		border-top $button-secondary-border-hover 1px solid
+		border-bottom $button-secondary-border-hover 1px solid
+
+	&--secondary:hover &__icon
+	&--flat:hover &__icon
+		color $button-flat-icon-hover
+
+	&--flat
+		min-width 0
+	    height 3.2rem
+	    justify-content center
+
+	&--flat&--trigger:active
+	&--flat&--trigger&--active
+		background $button-flat-trigger-bg-active
+		border-top 1px solid $button-flat-trigger-bg-active
+		border-bottom 1px solid $button-flat-trigger-bg-active
+
+	&--flat&--trigger:active &__icon
+	&--flat&--trigger&--active &__icon
+		color $button-flat-trigger-icon-active
+
+	&--flat&--toggle:active
+		background $button-flat-toggle-bg-active !important
+		border-bottom 1px solid $button-flat-toggle-bg-active
+		border-top 1px solid $button-flat-toggle-bg-active
+	&--flat&--toggle&--active
+		background $button-flat-toggle-bg-active-on
+	&--flat&--toggle:active &__icon
+		color $button-flat-toggle-icon-active !important
+	&--flat&--toggle&--active &__icon
+		color $button-flat-toggle-icon-active-on
+
+
+	&--dropdownTrigger&--active
+		background linear-gradient(top, $button-header-bg-top-active, $button-header-bg-bottom-active)
+		border-top $button-header-border-top-active 1px solid
+		border-bottom $button-header-border-bottom-active 1px solid
+
+	&--dropdownTrigger&--active &__icon
+		color $button-header-icon-color-active
+		filter drop-shadow(0 1px 0 $blue-800)
+
+	&--dropdownTrigger&--active:hover
+		background linear-gradient(top, $button-header-bg-top-hover-active, $button-header-bg-bottom-hover-active)
+		border-top $button-header-border-top-hover-active 1px solid
+		border-bottom $button-header-border-bottom-hover-active 1px solid
+
+	&--group
+		position relative
+		border-radius 0 !important
+		border-right 1px solid $button-group-border-right-default
+
+
+		&:not(:only-child):first-child
+			border-top-left-radius $border-radius-base !important
+			border-bottom-left-radius $border-radius-base !important
+
+		&:not(:only-child):last-child
+			border-top-right-radius $border-radius-base !important
+			border-bottom-right-radius $border-radius-base !important
+			border-right 0 !important
+
+
+	&--group:hover
+		border-right 1px solid $button-group-border-right-hover
+
+	&:active&--group&--dropdownTrigger
+	&--active&--group&--dropdownTrigger
+		border-right 1px solid $button-group-border-right-active
+
+	&:active&--group
+		border-right 1px solid $button-group-border-right-active
+
+	&--active&--group
+		border-right 1px solid $button-group-border-right-active
+
+
+	&--group&--flat
+		border-right 1px solid $button-group-flat-border-right-default
+
+	&--group&--flat:hover
+		border-right 1px solid $button-group-flat-border-right-hover
+
+	&--group&--flat:active
+	&--group&--flat&--active
+		border-right 1px solid $button-group-flat-border-right-active
+
+	&--expand
+		padding 1.2rem 0 !important
+		height auto
+		border-bottom-left-radius 0 !important
+		border-bottom-right-radius 0 !important
+		border-bottom transparent !important
+
+	&--big
+		width 4rem
+
+	&--float
+		size: 8rem
+		border-radius 100% !important
+
+	&--float &__icon
+		color $button-flat-icon-on
+
+	&--pager-nav
+		width 6rem
+
+	&--done
+		background $blue-500
+
+	&--done &__icon
+		color $white
+
+	&--green-icon &__icon
+		color $green-450
+
+	&--green-icon:hover &__icon
+		color $green-450
+
+	&--blue-icon &__icon
+		color $blue-500
+
+	&--isTrigger
+		relative()
+
+		&:after
+			content ""
+			display block
+			absolute(right 0.3rem bottom 0.2rem)
+			size(0)
+			border-style solid
+			border-width 0 0 0.4rem 0.4rem
+			border-color transparent transparent $black-350 transparent
+
+	&--isTrigger&--active
+	&--isTrigger:active
+		&:after
+			border-color transparent transparent $white transparent
+
+	&--nobord
+		border none !important
+
+	&--colored&--active
+	&--colored:active
+		background $button-secondary-bg-default !important
+		border-top $button-secondary-border-default !important
+		border-bottom $button-secondary-border-default !important
+
+	&--colored&--isTrigger&--active
+	&--colored&--isTrigger:active
+		&:after
+			border-color transparent transparent $black-350 transparent
+
+	&:disabled:active
+	&:disabled:hover
+		background $button-secondary-bg-default
+		border-bottom $button-secondary-border-default 1px solid
+		.button__icon
+			color $button-header-icon-color-default
+			
+	&--red
+		background $button-primary-red-default
+		border-bottom 1px solid $button-primary-red-border-default
+
+		.button-icon__icon
+			color $white
+
+		&:hover
+			background $button-primary-red-hover
+			border-top $button-primary-red-default 1px solid
+			border-bottom 1px solid $button-primary-red-border-default
+
+			.button-icon__icon
+				color $white
+
+		&:active
+		&--active
+			background $button-primary-red-active !important
+			border-top 1px solid $button-primary-red-border-active !important
+			border-bottom 1px solid transparent !important
+			
+	&--green
+		background $button-primary-green-default
+		border-bottom 1px solid $button-primary-green-border-default
+
+		.button-icon__icon
+			color $white
+
+		&:hover
+			background $button-primary-green-hover
+			border-bottom 1px solid $button-primary-green-border-hover
+			border-top 1px solid $button-primary-green-hover !important
+
+			.button-icon__icon
+				color $white
+
+		&:active
+		&:active:hover
+		&--active
+			background $button-primary-green-active
+			border-top 1px solid $button-primary-green-border-active !important
+			border-bottom 1px solid transparent
+			
+	&--blue
+		background $button-primary-blue-default
+		border-bottom 1px solid $button-primary-blue-default
+		border-top 1px solid $button-primary-blue-default
+
+		.button-icon__icon
+			color $white
+
+		&:hover
+			background $button-primary-blue-hover
+			border-bottom 1px solid $button-primary-blue-border-hover
+			border-top 1px solid $button-primary-blue-hover
+
+			.button-icon__icon
+				color $white
+
+		&:active
+		&--active
+			background $button-primary-blue-active
+			border-top 1px solid $button-primary-blue-border-active
+			border-bottom 1px solid transparent

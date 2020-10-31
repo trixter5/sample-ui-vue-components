@@ -1,0 +1,7 @@
+button(type="button" class="button button-counter" :class="[btnMod, mod]" @click="clickHandler")
+    span(v-if="iconName" class="button__icon button-counter__icon")
+        <SvgIcon :name="iconName"></SvgIcon>
+    span(class="button__text button-counter__text")
+        | <slot></slot>
+    span(v-if="btnCount" class="button__counter button-counter__counter")
+        | {{ btnCount }}

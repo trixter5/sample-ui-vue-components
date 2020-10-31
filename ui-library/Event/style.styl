@@ -1,0 +1,88 @@
+@import "../../ui-library/Rating/style.styl"
+.event
+	display flex
+	background $notification-bg-active
+	padding 0.8rem
+	transition background linear 1s
+	border-radius $border-radius-base
+	cursor pointer
+
+	&__row
+		display flex
+		align-items center
+
+	&__ava
+		size 3.2rem
+
+	&__icon
+		relative()
+		size(3.2rem)
+		margin-left -0.8rem
+		border-radius 100%
+		background $event-icon-bg
+		display flex
+		justify-content center
+		align-items center
+		svg
+			color $event-icon
+
+		&--owner
+			background $event-icon-bg-owner
+			svg
+				color $event-icon-owner
+
+	&__body
+		margin-left 0.8rem
+		display flex
+		flex-flow column nowrap
+
+	&__name
+		text(sb-14-0-l)
+		font-size 1rem
+		color $black-800
+		cursor pointer
+
+	&__nick
+		text(r-12-02-l)
+		color $black-350
+
+	&__name
+	&__nick
+		line-height 1.6rem
+		white-space nowrap
+		overflow hidden
+		text-overflow ellipsis
+		max-width 15rem
+
+	&__rating
+		relative()
+		margin-left 1.1rem
+		&:before
+			@extends .rating__value:before
+
+	&__rating .rating__value
+		font-size 1rem
+		letter-spacing normal
+
+	&__time
+		relative()
+		margin-left 1rem
+		text(r-10-02-l)
+		letter-spacing normal
+		color $event-time
+		&:before
+			@extends .rating__value:before
+
+	&__text
+		text(r-10-02-l)
+		letter-spacing normal
+		color $event-text
+
+	&__link
+		color $event-link
+
+	&--read
+		background $notification-bg
+
+.event ~ .event
+	margin-top 0.8rem

@@ -1,0 +1,47 @@
+.input-text(:class="{'input-text--small' : small}")
+    label.input-text__label(v-if="label && !small")
+        | {{ label }}
+    span.input-text__wrapper
+        input.input-text__control.input-text--password(
+            v-if="typePassword"
+            @blur="validate(pattern, model)"
+            @input="$emit('input', $event.target.value)"
+            @keydown="isCapsLock($event)"
+            v-bind="$attrs"
+            :value="model"
+            :placeholder="placeholderValue"
+            :type="typePass"
+            :class="{'input-text__control--invalid' : error}")
+        input.input-text__control(
+            v-else
+            @blur="validate(pattern, model)"
+            @input="onInput($event, pattern, model)"
+            @keydown="isCapsLock($event)"
+            v-bind="$attrs"
+            :value="model"
+            :placeholder="placeholderValue"
+            :type="type"
+            :class="{'input-text__control--invalid' : error}")
+        span.input-text__placeholder(v-if="!small")
+            | {{ placeholder }}
+        span.input-text__icon(v-if="typePassword")
+            <Button-icon @toggle="toggleShowPassword" modifier="flat square" :iconName="iconPassword"></Button-icon>
+        span.input-text__icon(v-if="!typePassword && icon" @mouseover="hoverHandler" @mouseleave="leaveHandler")
+            <Button-icon modifier="flat square" :iconName="icon"></Button-icon>
+        .input-text__loader(v-if="process")
+            span
+            span
+            span
+    span.input-text__helper(v-if="caps && typePassword" :class="{'input-text__helper--warning': caps}")
+        span
+            | <SvgIcon name="Warning"></SvgIcon>
+            | {{ warningText }}
+    span.input-text__helper(v-if="error")
+        span
+            | <SvgIcon name="Warning"></SvgIcon>
+        span
+            | {{ errorText }}
+    span.input-text__helper(v-if="errorTextServer")
+        span
+            | <SvgIcon name="Warning"></SvgIcon>
+            | {{ errorTextServer }}

@@ -1,0 +1,15 @@
+.checkbox(:class="checkboxClass")
+    label.checkbox__label(:for="'check' + _uid")
+        input.checkbox__input(
+            type="checkbox"
+            :name="name"
+            :id="'check' + _uid"
+            :checked="state"
+            :value="value"
+            @change="onChange")
+        .checkbox__icon
+            <SvgIcon v-if="state" viewBox="0 0 24 24" name="Checkbox-on"></SvgIcon>
+            <SvgIcon v-else viewBox="0 0 24 24" name="Checkbox-off"></SvgIcon>
+        .checkbox__text(v-if="$slots.default")
+            | <slot></slot>
+

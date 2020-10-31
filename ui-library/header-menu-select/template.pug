@@ -1,0 +1,12 @@
+div
+    .buttons-group.buttons-group--tabs.header-menu.header-menu--select(@click="isOpen = !isOpen")
+        span.buttons-group__divider
+            <Button-label headerArea :class="{'button-label--active': isOpen}">
+                | {{ selected }}
+            </Button-label>
+        span.buttons-group__divider
+            <Button-icon :iconName="isOpen ? 'Arrow-dropdown-top' : 'Arrow-dropdown-bottom'"></Button-icon>
+    .header-menu__dropdown(v-if="isOpen")
+        <Dropdown-menu isOpen>
+            <List-item-menu @click="select(btn)" v-for="(btn, index) in list" :key="btn.index" :iconName="btn.iconName"> {{ btn.btnText }} </List-item-menu>
+        </Dropdown-menu>

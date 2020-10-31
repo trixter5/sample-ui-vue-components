@@ -1,0 +1,3 @@
+.file-uploader
+    <Button-icon @toggle="triggerUpload" iconName="Photo" modifier="flat square group"></Button-icon>
+    input(@change="handleFileChange" :accept="formatsString" type="file" ref="upload" class="file-uploader__control" )

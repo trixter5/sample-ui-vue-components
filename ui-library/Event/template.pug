@@ -1,0 +1,14 @@
+.event(@mouseover="setAsRead" :class="{'event--read': getReadStatus }")
+    .event__ava
+        <Avatar :src="getEventAva" size="3.2""></avatar>
+    .event__icon(:class="{'event__icon--owner': getReadStatus}")
+        <svgIcon :name="getEventIcon"></svgIcon>
+    .event__body
+        .event__row
+            .event__name(:title="getEventSource")
+                | {{ getEventSource }}
+            .event__rating
+                <Rating value="3.5"></Rating>
+            .event__time
+                | {{ renderTimePast }}
+        .event__text(v-html="getEventText")

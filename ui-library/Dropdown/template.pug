@@ -1,0 +1,5 @@
+.dropdown(:class="{'dropdown--open': isOpenDropdown}")
+    .dropdown__trigger(@click="toggle" ref="trigger" :style="{width: triggerWidth}")
+        <slot name="trigger"></slot>
+    .dropdown__content(v-show="isOpenDropdown" :class="{'dropdown__content--open': isOpen}" :style="{top: offsetTop}")
+        <slot name="content"></slot>

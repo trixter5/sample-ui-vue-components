@@ -1,0 +1,39 @@
+.input-search
+	relative()
+	size(12.1rem 3.4rem)
+
+	&__control
+		box-sizing border-box
+		size: 100%
+		border $input-border-default 1px solid
+		padding 0.4rem 0.4rem 0.4rem 3.2rem
+		background $input-bg-default
+		border-radius $border-radius-base
+		box-shadow $input-bsh
+		text(r-14-02-l)
+		color $input-text
+
+		&::placeholder
+			text(r-14-02-l)
+			color $input-placeholder-default
+
+		&:hover
+			background $input-bg-hover
+
+		&:active
+			background $input-bg-active
+
+		&:focus
+			padding-left 0.4rem
+			outline none
+			border $input-border-focus 1px solid
+			box-shadow 0 0 0 $input-outline-width-focus $input-outline-focus
+
+		&:focus + .input-search__icon
+			display none
+
+	&__icon
+		absolute(left 0.4rem top 0.4rem)
+		color $input-icon-default
+		size: 2.4rem
+		padding-right 0.4rem

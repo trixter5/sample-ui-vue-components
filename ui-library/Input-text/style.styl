@@ -1,0 +1,141 @@
+.input-text
+	box-sizing border-box
+
+	&__control
+	&__wrapper
+	&__placeholder
+		box-sizing border-box
+
+	&__control
+		size(100%)
+		border $input-border-default 1px solid
+		padding $input-padding-y $input-padding-x
+		margin 0
+		background $input-bg-default
+		border-radius $input-border-radius
+		padding-top ($input-text-height / 2)
+		box-shadow $input-bsh
+		text(m-16-02-l)
+		color $input-text
+
+		&:focus
+			outline none
+			border $input-border-focus 1px solid
+			box-shadow 0 0 0 $input-outline-width-focus $input-outline-focus
+			background $input-bg-focus
+
+		&--invalid
+			border 1px solid $input-error-color
+
+		&:focus&--invalid
+			border 1px solid $input-error-color
+			box-shadow 0 0 0 $input-outline-width-focus $input-error-outline-color
+
+		&:focus + .input-text__placeholder
+			color $input-placeholder-focus
+
+	&__wrapper
+		position relative
+		display block
+		size($input-text-width, $input-text-height)
+		border-radius $input-border-radius
+
+	&__label
+		display block
+		margin-bottom 1.6rem
+		text-variant(light, 2rem, -0.4px, left)
+		line-height 2rem
+		//TODO: label style to change
+
+	&__icon
+		absolute(right 0.8rem top 1.2rem)
+
+	&__placeholder
+		absolute(top 0 left 0)
+		size(100%, 50%)
+		padding $input-padding-y $input-padding-x
+		text(r-14-02-l)
+		color $input-placeholder-default
+
+	&__helper
+		display inline-block
+		height 2rem
+		margin-top 0.8rem
+
+	&__helper span
+		display flex
+		align-items center
+		color $input-error-color
+		text(r-14-02-l)
+
+		svg
+			size(2rem)
+			margin-right 0.4rem
+
+	&__helper--warning span
+		color $color-warning !important
+
+	&:hover &__control
+		background $input-bg-hover
+
+	&:hover &__placeholder
+		color $input-placeholder-hover
+
+	::placeholder
+		color $black-800
+
+	&--small
+		height 3.2rem
+
+	&--small &__control
+		padding 0.6rem 1.2rem
+
+	&--small .input-text__control--tel
+		padding-left 7.2rem
+		padding-right 4.4rem
+
+	&--small .input-text__wrapper
+		width auto
+		height 100%
+		display flex
+		align-items stretch
+		
+	&--small .input-text__icon
+		position static
+
+
+	&--small .input-text__icon
+		margin-left -3.2rem
+		relative(top 0.1rem right 0)
+		.button-icon
+			height 3rem
+			border-top-left-radius 0
+			border-bottom-left-radius 0
+
+	&__loader
+		loader()
+
+
+.text-error
+	display flex
+	align-items center
+	margin-top 0.8rem
+	color $input-error-color
+	text(r-14-02-l)
+
+	svg
+		size(2rem)
+		margin-right 0.7rem
+		flex 0 0 2rem
+
+.text-success
+	display flex
+	align-items center
+	margin-top 0.8rem
+	color $input-valid-color
+	text(r-14-02-l)
+
+	svg
+		size(2rem)
+		margin-right 0.7rem
+		flex 0 0 2rem

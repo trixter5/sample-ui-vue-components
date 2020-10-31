@@ -1,0 +1,6 @@
+.circle-progress
+    svg.circle-progress__circle(:width="size" :height="size")
+        circle.circle-progress__bg(:cx="size / 2" :cy="size / 2" :r="size / 2 - 1")
+        circle.circle-progress__progress(:cx="size / 2" :cy="size / 2" :r="size / 2 - 1" :stroke-dasharray="computedProgress" stroke-linecap="round" stroke-dashoffset="0")
+    .circle-progress__text
+        | {{ text }}

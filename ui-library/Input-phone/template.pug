@@ -1,0 +1,29 @@
+.input-text(:class="{'input-text--small' : small}")
+    label.input-text__label(v-if="label && !small")
+        | {{ label }}
+    span.input-text__wrapper
+        span.input-text__placeholder(v-if="!small")
+            | {{ placeholder }}
+        span.input-text__prefix(v-if="prefix && !small" @click="togglePrefix" :class="{ 'input-text__prefix--active' : prefixOpen }")
+            | {{ prefix }}
+            | <svgIcon :name="prefixArrowIcon"></svgIcon>
+        span.input-text__prefix(v-if="prefix && small" @click="$emit('clickPrefix')")
+            <Button-label iconName="Arrow-dropdown-bottom" modifier="flat reverse"> {{ prefix }} </Button-label>
+        input.input-text__control.input-text__control--tel(
+            @blur="validate(pattern, model)"
+            @input="$emit('input', $event.target.value)"
+            v-bind="$attrs"
+            :value="val"
+            type="tel"
+            :placeholder="placeholderValue"
+            pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}"
+            autocomplete="tel"
+            maxlength="15"
+            :class="{'input-text__control--invalid' : error}")
+        span.input-text__icon(@mouseover="hoverHandler" @mouseleave="leaveHandler" v-if="icon")
+            <Button-icon modifier="flat square" :iconName="icon"></Button-icon>
+    span.input-text__helper
+        span(v-if="error")
+            | <SvgIcon name="Warning"></SvgIcon>
+            span
+                | {{ errorText }}
